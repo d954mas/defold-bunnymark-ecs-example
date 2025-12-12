@@ -1,0 +1,16 @@
+name: "bunnymark"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"bunnymark\"\n"
+  "  component: \"/bunnymark/bunnymark.gui\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"update_ecs\"\n"
+  "  type: \"collectionproxy\"\n"
+  "  data: \"collection: \\\"/bunnymark/update_ecs/update_ecs.collection\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}

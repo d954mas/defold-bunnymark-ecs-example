@@ -1,0 +1,181 @@
+script: "/bunnymark/bunnymark.gui_script"
+fonts {
+  name: "system_font"
+  font: "/builtins/fonts/debug/always_on_top.font"
+}
+nodes {
+  type: TYPE_BOX
+  id: "menu_root"
+  layer: "below"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 320.0
+    y: 728.348
+  }
+  size {
+    x: 400.0
+    y: 50.0
+  }
+  color {
+    x: 0.2
+    y: 0.2
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "update_ecs"
+  parent: "menu_root"
+  layer: "below"
+  inherit_alpha: true
+}
+nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Bunnymark using a ecs"
+  font: "system_font"
+  id: "update_ecs_text"
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  parent: "update_ecs"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 320.0
+    y: 4.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "<text>"
+  font: "system_font"
+  id: "version"
+  pivot: PIVOT_S
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  parent: "menu_root"
+  inherit_alpha: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "test_root"
+  layer: "below"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 542.892
+    y: 1091.645
+  }
+  size {
+    x: 150.0
+    y: 50.0
+  }
+  color {
+    x: 0.2
+    y: 0.2
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "toggle_profiler"
+  parent: "test_root"
+  layer: "below"
+  inherit_alpha: true
+}
+nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "PROFILER"
+  font: "system_font"
+  id: "toggle_profiler_text"
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  parent: "toggle_profiler"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 105.883
+    y: 1091.645
+  }
+  size {
+    x: 150.0
+    y: 50.0
+  }
+  color {
+    x: 0.2
+    y: 0.2
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "back"
+  parent: "test_root"
+  layer: "below"
+  inherit_alpha: true
+}
+nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "BACK"
+  font: "system_font"
+  id: "back_text"
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  parent: "back"
+  layer: "text"
+  inherit_alpha: true
+}
+layers {
+  name: "below"
+}
+layers {
+  name: "text"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

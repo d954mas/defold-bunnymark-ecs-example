@@ -1,0 +1,52 @@
+{
+  :build {
+    :lint-code false
+    :texture-compression true
+  }
+  :code {
+    :find {
+      :term "xMath_matrix_inv"
+      :wrap false
+    }
+  }
+  :open-assets {
+    :term "colle"
+  }
+  :search-in-files {
+    :exts ""
+    :include-libraries false
+    :term "font_all"
+  }
+  :workflow {
+    :recent-files [
+      [
+        "/bunnymark/bunnymark.collection"
+        :scene
+      ]
+      [
+        "/bunnymark/bunnymark.gui_script"
+        :code
+      ]
+      [
+        "/bunnymark/bunnymark.gui"
+        :scene
+      ]
+      [
+        "/bunnymark/update_ecs/update_ecs.collection"
+        :scene
+      ]
+      [
+        "/ecs/ecs.lua"
+        :code
+      ]
+      [
+        "/bunnymark/update_ecs/update_ecs.script"
+        :code
+      ]
+      [
+        "/ecs/fps_system.lua"
+        :code
+      ]
+    ]
+  }
+}
