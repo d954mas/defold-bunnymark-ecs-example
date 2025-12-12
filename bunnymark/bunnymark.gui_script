@@ -1,3 +1,6 @@
+local EcsDebugView = require "bunnymark.update_ecs.ecs_debug_view"
+local EcsWorld = require "bunnymark.update_ecs.ecs_world"
+
 local function load(self, proxy_url)
 	msg.post(proxy_url, "load")
 	self.current_proxy = proxy_url
@@ -17,6 +20,12 @@ function init(self)
 	self.menu_root_node = gui.get_node("menu_root")
 	self.update_ecs_node = gui.get_node("update_ecs")
 	gui.set_text(gui.get_node("version"), sys.get_engine_info().version)
+	EcsDebugView:init()
+	EcsDebugView:set_visible(false)
+end
+
+function update(self, dt)
+	EcsDebugView:update(EcsWorld.ecs_world)
 end
 
 function on_message(self, message_id, message, sender)
@@ -29,6 +38,8 @@ function on_message(self, message_id, message, sender)
 		self.menu_enabled = true
 		gui.set_enabled(self.test_root_node, false)
 		gui.set_enabled(self.menu_root_node, true)
+	elseif message_id == hash("toggle_ecs_debug") then
+		EcsDebugView:set_visible(not EcsDebugView.visible)
 	end
 end
 

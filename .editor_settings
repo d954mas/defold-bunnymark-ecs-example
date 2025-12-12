@@ -20,31 +20,43 @@
   :workflow {
     :recent-files [
       [
-        "/bunnymark/bunnymark.collection"
+        "/bunnymark/update_ecs/update_ecs.collection"
         :scene
       ]
       [
-        "/bunnymark/bunnymark.gui_script"
+        "/ecs/fps_system.lua"
         :code
       ]
       [
-        "/bunnymark/bunnymark.gui"
-        :scene
-      ]
-      [
-        "/bunnymark/update_ecs/update_ecs.collection"
-        :scene
+        "/ecs/ecs_debug_view.lua"
+        :code
       ]
       [
         "/ecs/ecs.lua"
         :code
       ]
       [
-        "/bunnymark/update_ecs/update_ecs.script"
+        "/bunnymark/bunnymark.collection"
+        :scene
+      ]
+      [
+        "/bunnymark/bunnymark.gui"
+        :scene
+      ]
+      [
+        "/bunnymark/update_ecs/ecs_debug_view.lua"
         :code
       ]
       [
-        "/ecs/fps_system.lua"
+        "/bunnymark/bunnymark.gui_script"
+        :code
+      ]
+      [
+        "/bunnymark/update_ecs/ecs_world.lua"
+        :code
+      ]
+      [
+        "/bunnymark/update_ecs/update_ecs.script"
         :code
       ]
     ]

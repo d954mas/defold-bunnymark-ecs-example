@@ -1,44 +1,28 @@
-local ECS = require "ecs.ecs"
-local MoveBunnySystem = require "ecs.move_bunny_system"
-local DrawBunnySystem = require "ecs.draw_bunny_system"
-local FpsSystem = require "ecs.fps_system"
-local function create_bunny()
-	---@class Entity
-	local bunny = {
-		position = vmath.vector3(math.random(640), math.random(930, 1030), 0),
-		velocity = -math.random(200),
-		bunny = true
-	}
-	return bunny
-end
+local ECS_WORLD = require "bunnymark.update_ecs.ecs_world"
 
-local function spawn(amount, ecs_world)
+local function spawn(amount)
 	for i=1,amount do
-		local bunny = create_bunny()
-		ecs_world:add_entity(bunny)
+		ECS_WORLD:add_bunny()
 	end
 end
 
 function init(self)
+	ECS_WORLD:init()
 	msg.post(".", "acquire_input_focus")
-	self.ecs_world = ECS.world()
-	self.fps_system = FpsSystem.new()
-	self.ecs_world:add_system(self.fps_system)
-	self.ecs_world:add_system(MoveBunnySystem.new())
-	self.ecs_world:add_system(DrawBunnySystem.new())
-	spawn(500, self.ecs_world)
+	spawn(500)
 end
 
 function final(self)
+	ECS_WORLD:final()
 end
 
 function update(self, dt)
-	self.ecs_world:update(dt)
-	label.set_text("#label", ("Bunnies: %d FPS: %.2f. Click to add more"):format(#self.ecs_world.entities_list, self.fps_system:get_fps()))	
+	ECS_WORLD:update(dt)
+	label.set_text("#label", ("Bunnies: %d FPS: %.2f. Click to add more"):format(ECS_WORLD:get_bunnies(), ECS_WORLD:get_fps()))	
 end
 
 function on_input(self, action_id, action)
 	if action_id == hash("touch") and action.released and action.y < 1030 then
-		spawn(500, self.ecs_world)
+		spawn(500)
 	end
 end
