@@ -43,6 +43,10 @@ function M:update(dt)
     self.ecs_world:update(dt)
 end
 
+function M:draw()
+	self.ecs_world:draw()
+end
+
 function M:final()
 	self.ecs_world:clear()
 	self.ecs_world = nil

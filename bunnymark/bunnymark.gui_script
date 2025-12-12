@@ -26,7 +26,9 @@ function init(self)
 end
 
 function update(self, dt)
-	EcsDebugView:update(EcsWorld.ecs_world)
+	if EcsWorld.ecs_world then
+		EcsDebugView:update(EcsWorld.ecs_world)
+	end
 end
 
 function on_message(self, message_id, message, sender)

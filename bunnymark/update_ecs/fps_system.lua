@@ -19,6 +19,7 @@ end
 
 function System:get_fps()
     local frames = self.frames
+    if #frames == 0 then return 0 end
     return 1 / ((frames[#frames] - frames[1]) / (#frames - 1))
 end
 
