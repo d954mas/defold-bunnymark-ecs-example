@@ -16,12 +16,12 @@ function EcsDebugView:init()
 	end
 
 	gui.set_enabled(self.labels[0], true)
-	gui.set_text(self.labels[0], string.format("%-40s %-9s %-9s %-9s %-9s \n", "Name", "Entities", "T", "TAvg", "TMax"))
+	gui.set_text(self.labels[0], string.format("%-20s %-9s %-6s %-6s %-9s \n", "Name", "Entities", "T", "TAvg", "TMax"))
 end
 
 function EcsDebugView:update(ecs)
 	if self.visible then
-		local systems = ecs.ecs.systems
+		local systems =ecs.systems
 		for i = 1, math.max(#self.sorted_systems, #systems) do
 			self.sorted_systems[i] = systems[i]
 		end
@@ -37,7 +37,7 @@ function EcsDebugView:update(ecs)
 				local position = vmath.vector3(0, 0-i * 13, 0)
 				gui.set_position(lbl, position)
 			end
-			gui.set_text(lbl, string.format("%-30s %-9d %-6.3f %-6.3f %-6.3f\n", sys.__class.name, #sys.entities_list,
+			gui.set_text(lbl, string.format("%-20s %-9d %-6.3f %-6.3f %-6.3f\n", sys.__class.name, #sys.entities_list,
 			sys.__time.current * 1000, sys.__time.average_value * 1000, sys.__time.max * 1000))
 		end
 	end

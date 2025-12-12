@@ -1,5 +1,6 @@
 [project]
 title = Bunnymark ECS
+dependencies#0 = https://github.com/d954mas/defold-chronos/archive/refs/tags/1.0.1.zip
 
 [bootstrap]
 main_collection = /bunnymark/bunnymark.collectionc

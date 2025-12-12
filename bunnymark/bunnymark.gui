@@ -3,6 +3,10 @@ fonts {
   name: "system_font"
   font: "/builtins/fonts/debug/always_on_top.font"
 }
+fonts {
+  name: "main"
+  font: "/assets/main.font"
+}
 nodes {
   type: TYPE_BOX
   id: "menu_root"
@@ -173,7 +177,50 @@ nodes {
 }
 nodes {
   position {
-    x: 30.0
+    x: 320.0
+    y: 1091.645
+  }
+  size {
+    x: 150.0
+    y: 50.0
+  }
+  color {
+    x: 0.2
+    y: 0.2
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "toggle_ecs_profiler"
+  parent: "test_root"
+  layer: "below"
+  inherit_alpha: true
+}
+nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "PROFILER ECS"
+  font: "system_font"
+  id: "toggle_ecs_profiler_text"
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  parent: "toggle_ecs_profiler"
+  layer: "text"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 4.0
     y: 1030.0
   }
   type: TYPE_BOX
@@ -184,8 +231,8 @@ nodes {
 }
 nodes {
   scale {
-    x: 0.3
-    y: 0.3
+    x: 0.5
+    y: 0.5
   }
   size {
     x: 200.0
@@ -193,7 +240,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "DRAW SYSTEM"
-  font: "system_font"
+  font: "main"
   id: "ecs/lbl"
   pivot: PIVOT_NW
   shadow {

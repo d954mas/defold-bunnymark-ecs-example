@@ -10,7 +10,7 @@
     }
   }
   :open-assets {
-    :term "colle"
+    :term "game."
   }
   :search-in-files {
     :exts ""
@@ -36,28 +36,36 @@
         :code
       ]
       [
-        "/bunnymark/bunnymark.collection"
-        :scene
-      ]
-      [
-        "/bunnymark/bunnymark.gui"
-        :scene
-      ]
-      [
-        "/bunnymark/update_ecs/ecs_debug_view.lua"
-        :code
-      ]
-      [
-        "/bunnymark/bunnymark.gui_script"
-        :code
-      ]
-      [
         "/bunnymark/update_ecs/ecs_world.lua"
         :code
       ]
       [
         "/bunnymark/update_ecs/update_ecs.script"
         :code
+      ]
+      [
+        "/bunnymark/bunnymark.collection"
+        :scene
+      ]
+      [
+        "/bunnymark/bunnymark.gui_script"
+        :code
+      ]
+      [
+        "/bunnymark/update_ecs/ecs_debug_view.lua"
+        :code
+      ]
+      [
+        "/game.project"
+        :cljfx-form-view
+      ]
+      [
+        "/assets/main.font"
+        :scene
+      ]
+      [
+        "/bunnymark/bunnymark.gui"
+        :scene
       ]
     ]
   }
