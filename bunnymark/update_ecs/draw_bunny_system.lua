@@ -16,7 +16,7 @@ local BUNNY_IMAGES = {
 }
 
 ---@class BunnyMoveSystem:EcsSystem
-local System = ECS.CLASS.class("BunnyMoveSystem", ECS.System)
+local System = ECS.CLASS.class("DrawBunnySystem", ECS.System)
 System.filter = ECS.filter("bunny")
 
 function System.new() return ECS.CLASS.new_instance(System) end
