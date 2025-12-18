@@ -56,8 +56,8 @@ Entities are plain Lua tables; systems extend `ECS.System`, declare a filter (`S
 - `world:add_entity(entity)` – queue the entity (plain table) to enter or refresh inside the world.
 - `world:remove_entity(entity)` – marks the entity for removal and calls system `on_remove`.
 - `world:add_system(system)` / `world:remove_system(system)` – register systems in update order.
-- `world:update(dt)` – processes system/entity queues, then calls each system’s `update`.
-- `world:draw(dt)` – optional draw pass for systems that expose `draw`.
+- `world:update(dt)` – processes system/entity queues, then calls each system’s `update`. Call this in update or fixed_update
+- `world:draw(dt)` – optional function for systems that need draw_line or imgui
 - `world:clear_entities()`, `world:clear_systems()`, `world:refresh()`, `world:clear()` – helpers to reset queues and contents.
 - Hooks: override `world:on_entity_added`, `world:on_entity_removed`, and `world:on_entity_updated` to react to entity lifecycle events.
 
